@@ -44,7 +44,7 @@ public class ArbolController {
             arbol.agregar(dato);
             txtResultado.setText("Dato agregado: " + dato);
             dibujarArbol();
-            initialize();
+
             txtDato.setText("");
         } catch (NumberFormatException e) {
             txtResultado.setText("Ingrese un número válido.");
@@ -133,7 +133,7 @@ public class ArbolController {
 
     @FXML
     public void borrar() {
-        arbol = new ArbolBinario<>();
+        arbol.borrarArbol();
         txtResultado.setText("Árbol borrado.");
         dibujarArbol();
     }
@@ -148,10 +148,16 @@ if (arbol.estaVacio()) {
 
     private void dibujarArbol() {
         arbolPane.getChildren().clear();
-        dibujarNodo(arbol.getRaiz(), 250, 30, 120);
+        if (arbol.getRaiz() != null) {
+            dibujarNodo(arbol.getRaiz(), 250, 30, 120);
+        }
     }
 
     private void dibujarNodo(Nodo<Integer> nodo, double x, double y, double separacion) {
+        if (nodo == null) {
+            return;
+        }
+
         Circle circulo = new Circle(x, y, 20);
         circulo.setFill(Color.TRANSPARENT);
         circulo.setStroke(Color.BLUE);
