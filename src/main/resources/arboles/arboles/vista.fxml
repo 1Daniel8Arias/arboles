@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="670.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arboles.arboles.controller.ArbolController">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" stylesheets="@style/estilos.css">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label text="Dato:" />
+            <TextField fx:id="txtDato" promptText="Ingrese dato..." />
+            <Button onAction="#agregar" stylesheets="@style/estilos.css" text="Agregar" />
+            <Button onAction="#eliminar" stylesheets="@style/estilos.css" text="Eliminar" />
+            <Button onAction="#existe" stylesheets="@style/estilos.css" text="¿Existe?" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="10" BorderPane.alignment="TOP_CENTER">
+            <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" prefHeight="400.0">
+                <content>
+                    <Group>
+                        <Pane fx:id="arbolPane" minHeight="400.0" minWidth="512.0" prefHeight="400.0" prefWidth="578.0" />
+                    </Group>
+                </content>
+            </ScrollPane>
+            <TextArea fx:id="txtResultado" prefHeight="150" prefWidth="600" />
+        </VBox>
+    </center>
+    <bottom>
+        <AnchorPane BorderPane.alignment="CENTER">
+            <children>
+                <VBox alignment="TOP_CENTER" prefHeight="122.0" prefWidth="599.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <children>
+                        <HBox prefWidth="Infinity" spacing="10.0" HBox.hgrow="ALWAYS" VBox.vgrow="NEVER">
+                            <children>
+                                <Button maxWidth="Infinity" onAction="#inorden" stylesheets="@style/estilos.css" text="Inorden" HBox.hgrow="ALWAYS" />
+                                <Button maxWidth="Infinity" onAction="#preorden" stylesheets="@style/estilos.css" text="Preorden" HBox.hgrow="ALWAYS" />
+                                <Button maxWidth="Infinity" onAction="#postorden" stylesheets="@style/estilos.css" text="Postorden" HBox.hgrow="ALWAYS" />
+                                <Button maxWidth="Infinity" onAction="#porNiveles" stylesheets="@style/estilos.css" text="Por Niveles" HBox.hgrow="ALWAYS" />
+                                <Button maxWidth="Infinity" onAction="#borrar" stylesheets="@style/estilos.css" text="Borrar Árbol" HBox.hgrow="ALWAYS" />
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#vacio" stylesheets="@style/estilos.css" text="Esta Vacio" HBox.hgrow="ALWAYS" />
+                            </children>
+                            <VBox.margin>
+                                <Insets left="5.0" right="5.0" top="10.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <HBox prefWidth="Infinity" spacing="10.0">
+                            <children>
+                                <Button maxWidth="Infinity" onAction="#altura" prefHeight="35.0" prefWidth="54.0" stylesheets="@style/estilos.css" text="Altura" HBox.hgrow="ALWAYS" />
+                                <Button maxWidth="Infinity" onAction="#peso" stylesheets="@style/estilos.css" text="Peso" HBox.hgrow="ALWAYS" />
+                                <Button maxWidth="Infinity" onAction="#nivel" stylesheets="@style/estilos.css" text="Nivel" HBox.hgrow="ALWAYS" />
+                                <Button maxWidth="Infinity" onAction="#contarHojas" stylesheets="@style/estilos.css" text="Contar Hojas" HBox.hgrow="ALWAYS" />
+                                <Button maxWidth="Infinity" onAction="#mayor" stylesheets="@style/estilos.css" text="Mayor" HBox.hgrow="ALWAYS" />
+                                <Button maxWidth="Infinity" onAction="#menor" stylesheets="@style/estilos.css" text="Menor" HBox.hgrow="ALWAYS" />
+                            </children>
+                            <VBox.margin>
+                                <Insets left="5.0" top="10.0" />
+                            </VBox.margin>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </bottom>
+</BorderPane>

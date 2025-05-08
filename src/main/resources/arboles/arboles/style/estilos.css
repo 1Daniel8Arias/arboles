@@ -1,0 +1,19 @@
+.button {
+    -fx-background-color: #0f86d8;
+    -fx-text-fill: #151515;
+    -fx-border-color: #151515;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 8 15 8 15;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #ffffff;
+}
+
+#txtDato, #txtResultado {
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+}
